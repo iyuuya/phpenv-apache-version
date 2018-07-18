@@ -54,6 +54,7 @@ fi
 if [ ! -f "$PHP_MODULE_PATH" ]; then
   echo "Make sure the specified version is installed." >&2
   echo "Apache module not found ${PHP_MODULE_PATH}" >&2
+  echo "try \`PHPENV_CONFIGURE_OPTS=\"--with-apxs2=$(which apxs)\" phpenv install ${PHPENV_APACHE_VERSION} && mv ${PHPENV_APACHE_MODULE_PATH} ${PHP_MODULE_PATH}\`"
   exit 1
 fi
 
